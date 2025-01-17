@@ -1,0 +1,10 @@
+<Project>
+  <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+  <PropertyGroup>
+    <ParentDirectoryBuildPropsPath>$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)..\'))</ParentDirectoryBuildPropsPath>
+  </PropertyGroup>
+
+  <ImportGroup>
+    <Import Project="$(ParentDirectoryBuildPropsPath)" />
+  </ImportGroup>
+</Project>
