@@ -1,2 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\BBUnit\BBUnit.csproj" />
+  </ItemGroup>
 </Project>

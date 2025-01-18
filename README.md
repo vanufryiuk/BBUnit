@@ -5,8 +5,8 @@
 > It is not ready for production use.
 
 > [!CAUTION]
-> BBUnit API is not stable.
-> Use at your own risk.
+> BBUnit API is not stable yet.
+> Use it at your own risk.
 
 ## Why yet another testing framework?
 
@@ -14,31 +14,63 @@
 
 BBUnit restricts test fragility by design.
 
-### Because you
-
 ## What's it like?
+
+### 1. ITestSuite\<TContract>
+
+Any ```ITestSuite<TContract>``` implementation is treated
+as a test collection. ```TContract``` here is a contract under test. Use
+```It``` property to test the contract implementation.
+
+```csharp
+using BBTest;
+using FLuentAssertions;
+
+public CalcTests : ITestSuite<ICalc>
+{
+  public required ICalc It { get; init; }
+
+  public void TwoPlusTwo_Should_BeFour()
+  {
+    It.Sum(2, 2).Should().Be(4);
+  }
+}
+```
+
+### 2. ITestingContext\<TContract>
+
+An ```ITestingContext<TContract>``` implementation is responsible for
+1. ```TContract``` implementation setup
+2. ```TestData``` setup
+
+## Getting Started
 
 ## To-Do List
 
 - [ ] Finish initial README.md
   - [ ] What is BBUnit?
   - [ ] What's it like?
-  - [ ] To-Do List
-  - [ ] Guide
+  - [ ] Getting Started
   - [ ] Examples
+  - [ ] To-Do List
 - [ ] Create initial API
+  - [x] ITestSuite
+  - [x] TestSuite
   - [ ] ITestingContext
-  - [ ] ITestSuite
   - [ ] ITestPrecondition
-  - [ ] ISubjectConfiguration
+  - [ ] ITestTargetConfiguration
   - [ ] ITestDataConfiguration
   - [ ] WhenAttribute
   - [ ] CornerCaseAttribute
 - [ ] Implement core functionality
   - [ ] Discovery
   - [ ] Setup
-    - [ ] Subject setup
-    - [ ] Test data setup
+    - [ ] TestTarget setup
+    - [ ] TestData setup
   - [ ] Execution
 - [ ] Implement Visual Studio test adapter
 - [ ] Implement Roslyn analyzers
+- [ ] Implement "dotnet new" templates
+- [ ] Implement advanced functionality
+  - [ ] Automated TestTarget setup
+  - [ ] Automated TestData setup
