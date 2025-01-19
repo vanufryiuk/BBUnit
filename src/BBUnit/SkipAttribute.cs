@@ -20,9 +20,15 @@
 // SOFTWARE.
 // =============================================================================
 
+using System;
+
 namespace BBUnit;
 
-public class SkipAttribute<T>
+/// <summary>
+/// An attribute intended 
+/// </summary>
+/// <typeparam name="T"></typeparam>
+public class SkipAttribute: Attribute
 {
 
 }

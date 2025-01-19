@@ -37,14 +37,18 @@ namespace BBUnit;
 ///         suite is treated as a test method.
 ///     </para>
 ///     <para>
+///         Consider <see cref="ITestSuite{TContract}"/> interface instead if
+///         you need test suite inheritance.
+///     </para>
+///     <para>
 ///         Use <see cref="It" /> property to access the test target instance.
 ///     </para>
 ///     <para>
 ///         Use method parameters to receive test data.
 ///     </para>
 ///     <para>
-///         Consider <see cref="ITestSuite{TContract}"/> interface instead if
-///         you need test suite inheritance.
+///         Use <see cref="SpecialAttribute"/> if you need some special data for
+///         specific parameter.
 ///     </para>
 ///     <para>
 ///         By default, BBUnit executes a test suite with no-op
@@ -59,7 +63,7 @@ namespace BBUnit;
 ///         run once for each of these <see cref="ITestingContext{T}"/> unless
 ///         you disable some with <see cref="NotForAttribute{T}"/>. Not to
 ///         confuse with <see cref="SkipForAttribute{T}"/> and
-///         <see cref="SkipAttribute{T}"/>.
+///         <see cref="SkipAttribute"/>.
 ///     </para>
 ///     <para>
 ///         An "appropriate" TTestTarget for a test suite is any type which
@@ -88,6 +92,11 @@ namespace BBUnit;
 ///         preserve the existing run, but still need an additional run with
 ///         customized testing context. See <see cref="CornerCaseAttribute{T}"/>
 ///         documentation for details.
+///     </para>
+///     <para>
+///         All of your tests are run in parallel by default. Use
+///         <see cref="CriticalSectionAttribute"/> to restrict test parallelism.
+///         See <see cref="CriticalSectionAttribute"/> for details.
 ///     </para>
 /// </remarks>
 public abstract class TestSuite<TContract>

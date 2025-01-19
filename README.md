@@ -54,14 +54,19 @@ An ```ITestingContext<TContract>``` implementation is responsible for
   - [ ] Examples
   - [ ] To-Do List
 - [ ] Create initial API
-  - [x] ITestSuite
-  - [x] TestSuite
+  - [ ] CornerCaseAttribute
+  - [x] CriticalSectionAttribute
+  - [ ] IDataSetup
+  - [ ] ITargetSetup
   - [ ] ITestingContext
   - [ ] ITestPrecondition
-  - [ ] ITestTargetConfiguration
-  - [ ] ITestDataConfiguration
+  - [x] ITestSuite
+  - [ ] NotForAttribute
+  - [ ] SkipAttribute
+  - [ ] SkipForAttribute
+  - [ ] SpecialAttribute
+  - [x] TestSuite
   - [ ] WhenAttribute
-  - [ ] CornerCaseAttribute
 - [ ] Implement core functionality
   - [ ] Discovery
   - [ ] Setup
