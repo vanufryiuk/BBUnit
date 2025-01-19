@@ -2,7 +2,7 @@
   <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
   <PropertyGroup>
     <ParentDirectoryBuildPropsPath>$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)..\'))</ParentDirectoryBuildPropsPath>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net9</TargetFramework>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 

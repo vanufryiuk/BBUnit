@@ -41,7 +41,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".sln", ".sln", "{3E13778F-D
 		README.md = README.md
 		.markdownlint.yml = .markdownlint.yml
 		stylecop.json = stylecop.json
+		LICENSE.md = LICENSE.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBUnit.Runtime", "src\BBUnit.Runtime\BBUnit.Runtime.csproj", "{A0D214AB-C207-4363-9B4F-6AA57C38E2A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +80,10 @@ Global
 		{2D8F549F-8B17-4223-9CC3-257C95929C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D8F549F-8B17-4223-9CC3-257C95929C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D8F549F-8B17-4223-9CC3-257C95929C55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D214AB-C207-4363-9B4F-6AA57C38E2A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D214AB-C207-4363-9B4F-6AA57C38E2A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D214AB-C207-4363-9B4F-6AA57C38E2A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D214AB-C207-4363-9B4F-6AA57C38E2A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,5 +96,6 @@ Global
 		{C5C584B7-192F-4EC1-8B24-42DAB04CA35B} = {C900D3B0-0025-400C-8266-59028BAF827E}
 		{3478031C-4A3C-4EEB-A946-63488C5CC82D} = {C900D3B0-0025-400C-8266-59028BAF827E}
 		{2D8F549F-8B17-4223-9CC3-257C95929C55} = {C900D3B0-0025-400C-8266-59028BAF827E}
+		{A0D214AB-C207-4363-9B4F-6AA57C38E2A5} = {56D1843C-188D-48C2-9279-CAB1A6914D5E}
 	EndGlobalSection
 EndGlobal

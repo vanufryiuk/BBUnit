@@ -6,6 +6,7 @@
         "ipascalcase",
         "netstandard",
         "pascalcase",
+        "Roslynator",
         "tpascalcase"
     ]
 }

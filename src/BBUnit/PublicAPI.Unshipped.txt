@@ -1,3 +1,9 @@
+#nullable enable
+BBUnit.IDataSetup
 BBUnit.ITestSuite<TContract>
 BBUnit.ITestSuite<TContract>.It.init -> void
-BBUnit.ITestSuite<TContract>.It.get -> TContract
+BBUnit.ITestSuite<TContract>.It.get -> TContract!
+BBUnit.TestSuite<TContract>
+BBUnit.TestSuite<TContract>.It.init -> void
+BBUnit.TestSuite<TContract>.It.get -> TContract!
+BBUnit.TestSuite<TContract>.TestSuite() -> void
