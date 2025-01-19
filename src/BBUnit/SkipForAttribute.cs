@@ -1,4 +1,4 @@
-// ========================================================================
+// =============================================================================
 // Copyright 2025 BBUnit contributors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,11 +12,11 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-// ========================================================================
+// =============================================================================
 
 namespace BBUnit;
 
-public interface IDataSetup
+public class SkipForAttribute<T>
 {
 
 }

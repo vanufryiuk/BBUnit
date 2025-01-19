@@ -1,0 +1,3 @@
+BBUnit.ITestSuite<TContract>
+BBUnit.ITestSuite<TContract>.It.init -> void
+BBUnit.ITestSuite<TContract>.It.get -> TContract

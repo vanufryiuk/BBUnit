@@ -16,7 +16,7 @@
 
 namespace BBUnit;
 
-public interface IDataSetup
+public class NotForAttribute<T>
 {
 
 }
