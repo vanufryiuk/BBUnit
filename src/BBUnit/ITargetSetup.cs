@@ -25,6 +25,6 @@ namespace BBUnit;
 /// <summary>
 /// An abstraction for setting up test targets.
 /// </summary>
-public interface ITargetSetup
+public interface ITargetSetup : IConfigureTarget, IPrepareTarget
 {
 }

@@ -25,6 +25,6 @@ namespace BBUnit;
 /// <summary>
 /// An abstraction for setting up test data.
 /// </summary>
-public interface IDataSetup
+public interface IDataSetup : IConfigureData, IPrepareData
 {
 }
