@@ -2,7 +2,7 @@ using System;
 
 namespace BBUnit;
 
-public interface IPrepareData
+public interface IPrecondition
 {
 
 }
