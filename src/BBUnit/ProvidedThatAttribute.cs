@@ -31,17 +31,17 @@ namespace BBUnit;
 /// <typeparam name="TPrecondition">Precondition to apply before test(s)
 /// execution.</typeparam>
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-public class WhenAttribute<TPrecondition> : Attribute
+public class ProvidedThatAttribute<TPrecondition> : Attribute
 where TPrecondition : ITestPrecondition
 {
     /// <summary>
     ///     Gets or sets the order in which to apply the
     ///     <typeparamref name="TPrecondition"/> against the other
-    ///     <see cref="WhenAttribute{T}"/> preconditions.
+    ///     <see cref="ProvidedThatAttribute{T}"/> preconditions.
     /// </summary>
     /// <remarks>
     ///     <para>
-    ///         If you use more than one <see cref="WhenAttribute{T}"/>, you may
+    ///         If you use more than one <see cref="ProvidedThatAttribute{T}"/>, you may
     ///         need to apply them to your testing context in a specific order.
     ///         This is the intention of this property.
     ///     </para>
@@ -51,22 +51,22 @@ where TPrecondition : ITestPrecondition
     ///     </para>
     ///     <para>
     ///         If you set the same order for more than one
-    ///         <see cref="WhenAttribute{T}"/>, these ones are ordered
+    ///         <see cref="ProvidedThatAttribute{T}"/>, these ones are ordered
     ///         alphabetically.
     ///     </para>
     ///     <para>
-    ///         Any <see cref="WhenAttribute{T}"/> with no <see cref="Order"/>
+    ///         Any <see cref="ProvidedThatAttribute{T}"/> with no <see cref="Order"/>
     ///         set are applied at the end.
     ///     </para>
     ///     <para>
-    ///         You should consider that <see cref="WhenAttribute{T}"/>
+    ///         You should consider that <see cref="ProvidedThatAttribute{T}"/>
     ///         preconditions are always applied before
-    ///         <see cref="CornerCaseAttribute{T}"/> ones.
+    ///         <see cref="EvenIfAttribute{T}"/> ones.
     ///     </para>
     /// </remarks>
     /// <value>
     ///     Order in which to apply the <typeparamref name="TPrecondition"/>
-    ///     against the other <see cref="WhenAttribute{T}"/> preconditions.
+    ///     against the other <see cref="ProvidedThatAttribute{T}"/> preconditions.
     /// </value>
     public uint? Order { get; set; }
 }

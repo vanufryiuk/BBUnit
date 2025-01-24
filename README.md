@@ -79,3 +79,8 @@ An ```ITestingContext<TContract>``` implementation is responsible for
 - [ ] Implement advanced functionality
   - [ ] Automated TestTarget setup
   - [ ] Automated TestData setup
+
+## TO READ
+
+https://martinfowler.com/tags/testing.html
+http://xunitpatterns.com/index.html

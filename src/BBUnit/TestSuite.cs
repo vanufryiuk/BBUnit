@@ -52,46 +52,46 @@ namespace BBUnit;
 ///     </para>
 ///     <para>
 ///         By default, BBUnit executes a test suite with no-op
-///         <see cref="ITestingContext{T}"/>. Create your own
-///         <see cref="ITestingContext{T}"/> implementation to customize test
-///         data or test target setup. See <see cref="ITestingContext{T}"/>
+///         <see cref="ITestStartup{T}"/>. Create your own
+///         <see cref="ITestStartup{T}"/> implementation to customize test data
+///         or test target setup. See <see cref="ITestStartup{T}"/>
 ///         documentation for details.
 ///     </para>
 ///     <para>
-///         If you have more than one <see cref="ITestingContext{T}"/> with
+///         If you have more than one <see cref="ITestStartup{T}"/> with
 ///         TTestTarget appropriate for your test suite, the test suite will be
-///         run once for each of these <see cref="ITestingContext{T}"/> unless
-///         you disable some with <see cref="NotForAttribute{T}"/>. Not to
-///         confuse with <see cref="SkipForAttribute{T}"/> and
+///         run once for each of these <see cref="ITestStartup{T}"/> unless you
+///         disable some with <see cref="NotForAttribute{T}"/>. Not to confuse
+///         with <see cref="SkipForAttribute{T}"/> and
 ///         <see cref="SkipAttribute"/>.
 ///     </para>
 ///     <para>
 ///         An "appropriate" TTestTarget for a test suite is any type which
 ///         implements or inherits the <typeparamref name="TContract"/> of the
-///         test suite. So you'd probably want to use interfaces and
-///         classes as contracts and test targets respectively.
+///         test suite. So you'd probably want to use interfaces and classes as
+///         contracts and test targets respectively.
 ///     </para>
 ///     <para>
 ///         It is also possible to have a generic <see cref="TestSuite{T}"/>
 ///         implementation. In this case, BBUnit tries to construct it for each
-///         appropriate <see cref="ITestingContext{T}"/> according to the type
+///         appropriate <see cref="ITestStartup{T}"/> according to the type
 ///         parameter constraints. As well as for TTestingTarget-TContract
 ///         matching rules, you are free to disable specific combinations of
-///         tests and contexts with <see cref="NotForAttribute{T}"/>.
+///         tests and startups with <see cref="NotForAttribute{T}"/>.
 ///     </para>
 ///     <para>
-///         If you want to reuse your <see cref="ITestingContext{T}"/>, but some
+///         If you want to reuse your <see cref="ITestStartup{T}"/>, but some
 ///         test or event whole test suite requires some minor changes in the
-///         <see cref="ITestingContext{T}"/>, you can use
-///         <see cref="WhenAttribute{T}"/> to customize the context for specific
-///         tests or test suites. See <see cref="WhenAttribute{T}"/>
-///         documentation for details.
+///         <see cref="ITestStartup{T}"/>, you can use
+///         <see cref="ProvidedThatAttribute{T}"/> to customize the startup for
+///         specific tests or test suites. See
+///         <see cref="ProvidedThatAttribute{T}"/> documentation for details.
 ///     </para>
 ///     <para>
-///         Consider <see cref="CornerCaseAttribute{T}"/> if you want to
-///         preserve the existing run, but still need an additional run with
-///         customized testing context. See <see cref="CornerCaseAttribute{T}"/>
-///         documentation for details.
+///         Consider <see cref="EvenIfAttribute{T}"/> if you want to preserve
+///         the existing run, but still need an additional run with customized
+///         startup. See <see cref="EvenIfAttribute{T}"/> documentation for
+///         details.
 ///     </para>
 ///     <para>
 ///         All of your tests are run in parallel by default. Use
