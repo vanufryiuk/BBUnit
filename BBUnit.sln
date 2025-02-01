@@ -46,6 +46,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".sln", ".sln", "{3E13778F-D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBUnit.Runtime", "src\BBUnit.Runtime\BBUnit.Runtime.csproj", "{A0D214AB-C207-4363-9B4F-6AA57C38E2A5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DL", "DL", "{E8625A8E-5E22-F697-DD19-1CCBA56E618D}"
+	ProjectSection(SolutionItems) = preProject
+		DL\DR0001 - Test Discovery: Attributes vs. Interfaces.md = DL\DR0001 - Test Discovery: Attributes vs. Interfaces.md
+		DL\README.md = DL\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
