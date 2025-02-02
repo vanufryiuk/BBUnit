@@ -6,5 +6,5 @@ public interface ITestContextConfig
 {
     ITestContextConfig For(Type type, Func<ITestContextConfig, ITestContextConfig> configure);
 
-    ITestContextConfig With(Type type, Func<ITestContext, object> construct);
+    ITestContextConfig With(Type type, Func<ITestFixture, object> construct);
 }

@@ -9,12 +9,14 @@ public static class TestCaseExtensions
     public static TestCase ToVsTestCase(this Runtime.TestCase self, string source)
     {
         var vsTestCase = new TestCase(
-            self.FullyQualifiedName,
+            $"{self.Suite.Name}.{self.Fixture.Name}.{self.Name}",
             VsTestExecutor.UriUri,
             source
-        );
-
-        //vsTestCase.
+        )
+        {
+            CodeFilePath = self.Scenario.FilePath,
+            LineNumber = self.Scenario.LineNumber,
+        };
 
         return vsTestCase;
     }

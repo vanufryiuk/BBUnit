@@ -5,5 +5,5 @@ namespace BBUnit.Runtime;
 
 public class TestSuite
 {
-    public IEnumerable<TestFixture> AppropriateFixtures { get; }
+    public string Name { get; }
 }

@@ -98,7 +98,7 @@ namespace BBUnit;
 ///         See <see cref="CriticalSectionAttribute"/> for details.
 ///     </para>
 /// </remarks>
-public interface ITestSuite<TContract>
+public interface ITestSuite<TContract> : Internal.ITestSuite
 where TContract : class
 {
     /// <summary>
