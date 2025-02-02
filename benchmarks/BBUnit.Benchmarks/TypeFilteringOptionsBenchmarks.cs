@@ -2,7 +2,7 @@ using BenchmarkDotNet.Attributes;
 
 namespace BBUnit.Benchmarks;
 
-public class DiscoveryOptionsBenchmarks
+public class TypeFilteringOptionsBenchmarks
 {
     [Benchmark]
     public object IsDefinedNonGeneric()

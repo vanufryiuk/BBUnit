@@ -2,4 +2,6 @@
 
 using BenchmarkDotNet.Running;
 
-BenchmarkRunner.Run<DiscoveryOptionsBenchmarks>();
+//BenchmarkRunner.Run<TypeFilteringOptionsBenchmarks>();
+
+BenchmarkRunner.Run<AssemblyDiscoveryOptionsBenchmarks>();
