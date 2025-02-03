@@ -90,7 +90,7 @@ csharp_style_expression_bodied_constructors = false:silent
 csharp_style_expression_bodied_indexers = true:silent
 csharp_style_expression_bodied_lambdas = true:suggestion
 csharp_style_expression_bodied_local_functions = false:silent
-csharp_style_expression_bodied_methods = false:silent
+csharp_style_expression_bodied_methods = false:none
 csharp_style_expression_bodied_operators = false:silent
 csharp_style_expression_bodied_properties = true:silent
 
@@ -192,6 +192,9 @@ dotnet_diagnostic.SA1200.severity = none
 
 # SA1009: Closing parenthesis should be spaced correctly
 dotnet_diagnostic.SA1009.severity = none
+
+# SA1101: Prefix local calls with this
+dotnet_diagnostic.SA1101.severity = none
 
 [*.{cs,vb}]
 

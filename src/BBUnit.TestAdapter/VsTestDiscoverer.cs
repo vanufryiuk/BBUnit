@@ -28,7 +28,9 @@ public class VsTestDiscoverer : ITestDiscoverer
         {
             var asm = asmCtx.LoadFromAssemblyPath(source)!;
 
-            var plan = new TestExecutionPlan().WithAssembly(asm);
+            var context = TestExecutionContext
+                .Empty
+                .WithAssembly(asm);
 
             foreach (var testCase in plan.Cases)
             {
