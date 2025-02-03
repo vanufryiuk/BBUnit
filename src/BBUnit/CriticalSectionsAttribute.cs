@@ -28,7 +28,7 @@ namespace BBUnit;
 ///     This attribute marks a testing context, a test suite, a test
 ///     precondition, or a test method as a critical section.
 /// </summary>
-/// <param name="sharedResource">
+/// <param name="sharedResources">
 ///     Name of the shared resource of this critical section.
 /// </param>
 /// <remarks>
@@ -37,11 +37,11 @@ namespace BBUnit;
 ///         resource and must be executed by only one thread at a time.
 ///     </para>
 ///     <para>
-///         <paramref name="sharedResource"/> here is a unique shared resource
+///         <paramref name="sharedResources"/> here is a unique shared resource
 ///         identifier. BBUnit never runs two or more critical sections with the
-///         same <paramref name="sharedResource"/> in parallel even though
+///         same <paramref name="sharedResources"/> in parallel even though
 ///         parallel execution is the default behavior of BBUnit. You are free
-///         to use any <paramref name="sharedResource"/> value you want,
+///         to use any <paramref name="sharedResources"/> value you want,
 ///         including a human readable one. You need just to keep it unique for
 ///         each shared resource you have.
 ///     </para>
@@ -49,40 +49,40 @@ namespace BBUnit;
 ///         Applied to <see cref="ITestingContext{T}"/>, this attribute denies
 ///         parallel execution for tests that use this testing context, as well
 ///         as parallel setup of them. Any other critical section with the same
-///         <paramref name="sharedResource"/> will never run in parallel with
+///         <paramref name="sharedResources"/> will never run in parallel with
 ///         this one as well.
 ///     </para>
 ///     <para>
 ///         Applied to <see cref="ITestSuite{T}"/>, this attribute denies
 ///         parallel execution for it's tests. Parallel setup of them is still
 ///         allowed. Any other critical section with the same
-///         <paramref name="sharedResource"/> will never run in parallel with
+///         <paramref name="sharedResources"/> will never run in parallel with
 ///         this one as well.
 ///     </para>
 ///     <para>
 ///         Applied to <see cref="ITestPrecondition"/>, this attribute denies
 ///         parallel execution for tests that use this precondition, as well as
 ///         parallel setup of these tests. Any other critical section with the
-///         same <paramref name="sharedResource"/> will never run in parallel
+///         same <paramref name="sharedResources"/> will never run in parallel
 ///         with this one as well.
 ///     </para>
 ///     <para>
 ///         Applied to a specific test method, this attribute denies execution of
 ///         this test in parallel with any other critical section with the same
-///         <paramref name="sharedResource"/>. Parallel setup of this test is
+///         <paramref name="sharedResources"/>. Parallel setup of this test is
 ///         still allowed.
 ///     </para>
 ///     <para>
-///         If you use more than one <see cref="CriticalSectionAttribute"/> on
+///         If you use more than one <see cref="CriticalSectionsAttribute"/> on
 ///         the same target, it is treated as more than one shared resource used
 ///         by the target, and the logic above applies o each of them.
 ///     </para>
 /// </remarks>
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-public class CriticalSectionAttribute(string sharedResource) : Attribute
+public class CriticalSectionsAttribute(params string[] sharedResources) : Attribute
 {
     /// <summary>
     /// Gets the name of the shared resource of this critical section.
     /// </summary>
-    public string SharedResource { get; } = sharedResource;
+    public string[] SharedResources { get; set; } = sharedResources;
 }

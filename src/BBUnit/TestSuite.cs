@@ -95,8 +95,8 @@ namespace BBUnit;
 ///     </para>
 ///     <para>
 ///         All of your tests are run in parallel by default. Use
-///         <see cref="CriticalSectionAttribute"/> to restrict test parallelism.
-///         See <see cref="CriticalSectionAttribute"/> for details.
+///         <see cref="CriticalSectionsAttribute"/> to restrict test parallelism.
+///         See <see cref="CriticalSectionsAttribute"/> for details.
 ///     </para>
 /// </remarks>
 public abstract class TestSuite<TContract>

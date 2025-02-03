@@ -6,9 +6,12 @@ namespace BBUnit.TestAdapter;
 
 public static class TestCaseExtensions
 {
+    private static readonly TestProperty ManagedType = TestProperty.Find("ManagedType")!;
+    private static readonly TestProperty ManagedMethod = TestProperty.Find("ManagedMethod")!;
+
     public static TestCase ToVsTestCase(this Runtime.TestCase self, string source)
     {
-        var vsTestCase = new TestCase(
+        var result = new TestCase(
             $"{self.Suite.Name}.{self.Fixture.Name}.{self.Name}",
             VsTestExecutor.UriUri,
             source
@@ -18,6 +21,9 @@ public static class TestCaseExtensions
             LineNumber = self.Scenario.LineNumber,
         };
 
-        return vsTestCase;
+        result.SetPropertyValue(ManagedType, self.Suite.Definition.FullName);
+        result.SetPropertyValue(ManagedMethod, self.Scenario.Definition.Name);
+
+        return result;
     }
 }

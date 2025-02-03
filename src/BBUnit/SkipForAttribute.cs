@@ -20,9 +20,35 @@
 // SOFTWARE.
 // =============================================================================
 
+using System;
+
 namespace BBUnit;
 
-public class SkipForAttribute<T>
+public class SkipForAttribute(params Type[] target) : Attribute
 {
+    public Type[] Targets { get; set; } = target;
+}
 
+public class SkipForAttribute<TTarget> : SkipForAttribute
+{
+    public SkipForAttribute()
+    : base(typeof(TTarget))
+    {
+    }
+}
+
+public class SkipForAttribute<TTarget1, TTarget2> : SkipForAttribute
+{
+    public SkipForAttribute()
+    : base(typeof(TTarget1), typeof(TTarget2))
+    {
+    }
+}
+
+public class SkipForAttribute<TTarget1, TTarget2, TTarget3> : SkipForAttribute
+{
+    public SkipForAttribute()
+    : base(typeof(TTarget1), typeof(TTarget2), typeof(TTarget3))
+    {
+    }
 }

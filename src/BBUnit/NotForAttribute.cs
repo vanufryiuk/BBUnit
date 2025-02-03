@@ -20,9 +20,35 @@
 // SOFTWARE.
 // =============================================================================
 
+using System;
+
 namespace BBUnit;
 
-public class NotForAttribute<T>
+public class NotForAttribute(params Type[] targets) : Attribute
 {
+    public Type[] Targets { get; set; } = targets;
+}
 
+public class NotForAttribute<TTarget> : NotForAttribute
+{
+    public NotForAttribute()
+    : base(typeof(TTarget))
+    {
+    }
+}
+
+public class NotForAttribute<TTarget1, TTarget2> : NotForAttribute
+{
+    public NotForAttribute()
+    : base(typeof(TTarget1), typeof(TTarget2))
+    {
+    }
+}
+
+public class NotForAttribute<TTarget1, TTarget2, TTarget3> : NotForAttribute
+{
+    public NotForAttribute()
+    : base(typeof(TTarget1), typeof(TTarget2), typeof(TTarget3))
+    {
+    }
 }

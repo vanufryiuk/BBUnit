@@ -3,14 +3,11 @@ using System.Collections.Immutable;
 
 namespace BBUnit.Runtime;
 
-public class TestExecutionPlan
+public record class TestExecutionPlan (
+    IImmutableList<TestCase> Cases)
 {
     public static TestExecutionPlan FromContext(TestExecutionContext ctx)
     {
         throw new NotImplementedException();
     }
-
-    public IImmutableList<TestCase> Cases { get; } = ImmutableList<TestCase>
-        .Empty;
-
 }

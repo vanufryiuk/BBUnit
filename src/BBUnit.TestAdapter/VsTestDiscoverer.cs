@@ -19,22 +19,25 @@ public class VsTestDiscoverer : ITestDiscoverer
         IEnumerable<string> sources,
         IDiscoveryContext discoveryContext,
         IMessageLogger logger,
-        ITestCaseDiscoverySink discoverySink
-    )
+        ITestCaseDiscoverySink discoverySink)
     {
         var asmCtx = AssemblyLoadContext.Default;
 
         foreach (var source in sources)
         {
-            var asm = asmCtx.LoadFromAssemblyPath(source)!;
+            var asm = asmCtx
+                .LoadFromAssemblyPath(source)!;
 
-            var context = TestExecutionContext
-                .Empty
-                .WithAssembly(asm);
+            var ctx = TestExecutionContext
+                .Empty.With(asm);
+
+            var plan = TestExecutionPlan
+                .FromContext(ctx);
 
             foreach (var testCase in plan.Cases)
             {
-                discoverySink.SendTestCase(testCase.ToVsTestCase(source));
+                discoverySink.SendTestCase(
+                    testCase.ToVsTestCase(source));
             }
         }
     }

@@ -3,30 +3,24 @@ using System.Linq;
 
 namespace BBUnit.Runtime;
 
-public class TestCase
+public record class TestCase(
+    string Name,
+    TestSuite Suite,
+    TestFixture Fixture,
+    TestScenario Scenario,
+    IImmutableList<TestPrecondition> CasePreconditions)
 {
-    public string Name { get; }
-
-    public TestSuite Suite { get; }
-
-    public TestFixture Fixture { get; }
-
-    public TestScenario Scenario { get; }
-
-    public IImmutableList<TestPrecondition> CasePreconditions { get; }
-
-    public TestCase(
-        TestSuite suite,
-        TestFixture fixture,
-        TestScenario scenario,
-        IImmutableList<TestPrecondition> casePreconditions
-    )
+    public TestCase (
+        TestSuite Suite,
+        TestFixture Fixture,
+        TestScenario Scenario,
+        IImmutableList<TestPrecondition> CasePreconditions)
+    : this (
+        string.Join("_", new[] { Scenario.Name }.Concat(CasePreconditions.Select(p => p.Name))),
+        Suite,
+        Fixture,
+        Scenario,
+        CasePreconditions)
     {
-        this.Suite = suite;
-        this.Fixture = fixture;
-        this.Scenario = scenario;
-        this.CasePreconditions = casePreconditions;
-
-        this.Name = string.Join("_", new[] { scenario.Name }.Concat(casePreconditions.Select(p => p.Name)));
     }
 }
