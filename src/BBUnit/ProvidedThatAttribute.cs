@@ -31,7 +31,7 @@ namespace BBUnit;
 /// <typeparam name="TPrecondition">Precondition to apply before test(s)
 /// execution.</typeparam>
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-public class ProvidedThatAttribute<TPrecondition> : Attribute
+public class ProvidedThatAttribute<TPrecondition> : ProvidedThatAttribute
 where TPrecondition : ITestPrecondition
 {
     /// <summary>
@@ -68,5 +68,16 @@ where TPrecondition : ITestPrecondition
     ///     Order in which to apply the <typeparamref name="TPrecondition"/>
     ///     against the other <see cref="ProvidedThatAttribute{T}"/> preconditions.
     /// </value>
-    public uint? Order { get; set; }
+    
+    public ProvidedThatAttribute(uint? order = default)
+    : base(typeof(TPrecondition), order)
+    {
+    }
+}
+
+public class ProvidedThatAttribute(Type precondition, uint? order = default) : Attribute
+{
+    public Type Precondition { get; set; } = precondition;
+
+    public uint? Order { get; set; } = order;
 }

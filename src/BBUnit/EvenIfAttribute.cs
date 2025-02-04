@@ -51,7 +51,16 @@ namespace BBUnit;
 ///     <see cref="ITestPrecondition"/> to use for the additional test(s) run.
 /// </typeparam>
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Parameter, AllowMultiple = true)]
-public class EvenIfAttribute<TPrecondition> : Attribute
+public class EvenIfAttribute<TPrecondition> : EvenIfAttribute
 where TPrecondition : ITestPrecondition
 {
+    public EvenIfAttribute()
+    : base(typeof(TPrecondition))
+    {
+    }
+}
+
+public class EvenIfAttribute(Type precondition) : Attribute
+{
+    public Type Precondition { get; set; } = precondition;
 }

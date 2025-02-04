@@ -24,9 +24,28 @@ using System;
 
 namespace BBUnit;
 
-public class SkipForAttribute(params Type[] target) : Attribute
+/// <summary>
+///     This class is not intended to be used directly. Use generic
+///     <see cref="SkipForAttribute{T}"/> instead.
+/// </summary>
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
+public class SkipForAttribute : Attribute
 {
-    public Type[] Targets { get; set; } = target;
+    /// <summary>
+    ///     Initializes a new instance of the <see cref="SkipForAttribute"/>
+    ///     class.
+    /// </summary>
+    /// <param name="targets">
+    ///     Definitions of the test abstractions to be skipped in combination
+    ///     with the attribute target.
+    /// </param>
+    internal SkipForAttribute(params Type[] targets) => Targets = targets;
+
+    /// <summary>
+    ///     Gets an array of definitions of the test abstractions to be skipped
+    ///     in combination with the attribute target.
+    /// </summary>
+    public Type[] Targets { get; }
 }
 
 public class SkipForAttribute<TTarget> : SkipForAttribute

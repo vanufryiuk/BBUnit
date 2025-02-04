@@ -187,14 +187,17 @@ csharp_preserve_single_line_statements = true
 
 #### Naming styles ####
 
+# BUGGY
 # SA1200: Using directives should be placed correctly
 dotnet_diagnostic.SA1200.severity = none
 
-# SA1009: Closing parenthesis should be spaced correctly
-dotnet_diagnostic.SA1009.severity = none
-
+# BUGGY
 # SA1101: Prefix local calls with this
 dotnet_diagnostic.SA1101.severity = none
+
+# BUGGY
+# SA1106: Code should not contain empty statements
+dotnet_diagnostic.SA1106.severity = none
 
 [*.{cs,vb}]
 

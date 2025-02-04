@@ -24,11 +24,29 @@ using System;
 
 namespace BBUnit;
 
-/// <summary>
-/// An attribute for skipping tests.
-/// </summary>
-/// <typeparam name="T"></typeparam>
-public class SkipAttribute: Attribute
-{
+// ATTENTION:
+// This class is a nothing-to-add one (completely finished).
+// You may want to update documentation but code.
 
-}
+/// <summary>
+///     An attribute for skipping test case execution.
+/// </summary>
+/// <remarks>
+///     <para>
+///         Any test abstraction (test scenario, test suite, test precondition,
+///         test fixture) marked with <see cref="SkipAttribute"/> will not be
+///         used for running your test cases without a direct intention (direct
+///         run of an ignored test case).
+///     </para>
+///     <para>
+///         Unlike ones disabled with <see cref="NotForAttribute"/>, skipped
+///         test cases are still discoverable (visible in the test explorer and
+///         present in the test run statistics).
+///     </para>
+///     <para>
+///         See <see href="https://github.com/vanufryiuk/BBUnit/blob/main/docs/UserGuide/SkippingTestCases.md#SkipAttribute"/>
+///         for more details and examples.
+///     </para>
+/// </remarks>
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
+public class SkipAttribute : Attribute;

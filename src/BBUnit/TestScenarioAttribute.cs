@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 namespace BBUnit;
 
 [AttributeUsage(AttributeTargets.Method)]
-public class TestCaseAttribute(
+public class TestScenarioAttribute(
     [CallerFilePath] string filePath = "",
     [CallerLineNumber] int lineNumber = 0
 ) : Attribute
