@@ -39,9 +39,9 @@ namespace BBUnit;
 ///         run of an ignored test case).
 ///     </para>
 ///     <para>
-///         Unlike ones disabled with <see cref="NotForAttribute"/>, skipped
-///         test cases are still discoverable (visible in the test explorer and
-///         present in the test run statistics).
+///         Skipped test cases are still discoverable (visible in the test
+///         explorer and present in the test run statistics), unlike ones
+///         disabled with <see cref="NotForAttribute"/>.
 ///     </para>
 ///     <para>
 ///         See <see href="https://github.com/vanufryiuk/BBUnit/blob/main/docs/UserGuide/SkippingTestCases.md#SkipAttribute"/>

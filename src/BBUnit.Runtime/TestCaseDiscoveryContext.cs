@@ -7,23 +7,23 @@ using BBUnit.Internal;
 
 namespace BBUnit.Runtime;
 
-public record class TestExecutionContext(
+public record class TestCaseDiscoveryContext(
     IImmutableList<TestSuite> TestSuites,
     IImmutableList<TestFixture> TestFixtures
 )
 {
-    public static TestExecutionContext Empty { get; }
-        = new TestExecutionContext(
+    public static TestCaseDiscoveryContext Empty { get; }
+        = new TestCaseDiscoveryContext(
             ImmutableList<TestSuite>.Empty,
             ImmutableList<TestFixture>.Empty);
 
-    public TestExecutionContext With(TestSuite suite)
+    public TestCaseDiscoveryContext With(TestSuite suite)
         => this with { TestSuites = TestSuites.Add(suite) };
 
-    public TestExecutionContext With(TestFixture fixture)
+    public TestCaseDiscoveryContext With(TestFixture fixture)
         => this with { TestFixtures = TestFixtures.Add(fixture) };
 
-    public TestExecutionContext With(Assembly asm)
+    public TestCaseDiscoveryContext With(Assembly asm)
     {
         var suites = new List<TestSuite>();
         var fixtures = new List<TestFixture>();

@@ -28,7 +28,7 @@ public class VsTestDiscoverer : ITestDiscoverer
             var asm = asmCtx
                 .LoadFromAssemblyPath(source)!;
 
-            var ctx = TestExecutionContext
+            var ctx = TestCaseDiscoveryContext
                 .Empty.With(asm);
 
             var plan = TestExecutionPlan
