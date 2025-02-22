@@ -43,7 +43,7 @@ public record class TestCaseDiscoveryContext(
 
             if (type.IsAssignableTo(typeof(ITestFixture)))
             {
-                fixtures.Add(type.ToTestFixture());
+                fixtures.Add(TestFixture.FromDefinition(type));
             }
         }
 

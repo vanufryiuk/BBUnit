@@ -21,8 +21,8 @@ public static class TestCaseExtensions
             LineNumber = self.Scenario.LineNumber,
         };
 
-        result.SetPropertyValue(ManagedType, self.Suite.Definition.FullName);
-        result.SetPropertyValue(ManagedMethod, self.Scenario.Definition.Name);
+        //result.SetPropertyValue(ManagedType, self.Suite.Definition.FullName);
+        //result.SetPropertyValue(ManagedMethod, self.Scenario.Definition.Name);
 
         return result;
     }

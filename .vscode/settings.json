@@ -8,5 +8,6 @@
         "pascalcase",
         "Roslynator",
         "tpascalcase"
-    ]
+    ],
+    "versionlens.dotnet.files": "**/Directory.Packages.props"
 }

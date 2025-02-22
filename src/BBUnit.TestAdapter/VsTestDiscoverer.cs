@@ -29,12 +29,13 @@ public class VsTestDiscoverer : ITestDiscoverer
                 .LoadFromAssemblyPath(source)!;
 
             var ctx = TestCaseDiscoveryContext
-                .Empty.With(asm);
+                .Empty
+                .With(asm);
 
-            var plan = TestExecutionPlan
-                .FromContext(ctx);
+            var caseCollection = TestCaseCollection
+                .FromDiscoveryContext(ctx);
 
-            foreach (var testCase in plan.Cases)
+            foreach (var testCase in caseCollection.Cases)
             {
                 discoverySink.SendTestCase(
                     testCase.ToVsTestCase(source));

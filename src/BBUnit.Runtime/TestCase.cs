@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Immutable;
 using System.Linq;
 
@@ -8,19 +9,19 @@ public record class TestCase(
     TestSuite Suite,
     TestFixture Fixture,
     TestScenario Scenario,
-    IImmutableList<TestPrecondition> CasePreconditions)
+    IImmutableList<Type> CasePreconditionDefinitions)
 {
     public TestCase (
         TestSuite Suite,
         TestFixture Fixture,
         TestScenario Scenario,
-        IImmutableList<TestPrecondition> CasePreconditions)
+        IImmutableList<Type> CasePreconditionDefinitions)
     : this (
-        string.Join("_", new[] { Scenario.Name }.Concat(CasePreconditions.Select(p => p.Name))),
+        string.Join("_", new[] { Scenario.Name }.Concat(CasePreconditionDefinitions.Select(p => p.Name))),
         Suite,
         Fixture,
         Scenario,
-        CasePreconditions)
+        CasePreconditionDefinitions)
     {
     }
 }

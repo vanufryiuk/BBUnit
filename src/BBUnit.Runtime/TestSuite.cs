@@ -22,7 +22,7 @@ public record class TestSuite(
     {
         var contract = definition
             .FindInterfaces(
-                (t, _) => t.GetGenericTypeDefinition() == typeof(ITestSuite<>),
+                (t, _) => t.IsConstructedGenericType && t.GetGenericTypeDefinition() == typeof(ITestSuite<>),
                 default)
             .Select(t => t.GenericTypeArguments[0])
             .Single();
